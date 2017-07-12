@@ -1,0 +1,42 @@
+﻿@model GymReservationSystem.DomainModel.Client
+
+<h2>Delete Client</h2>
+@using (Html.BeginForm("Delete", "Clients", FormMethod.Post, new { id = "popupForm" }))
+{
+  
+
+    @Html.HiddenFor(a=>a.Id)
+    <div class="form-group">
+        <label>First Name</label>
+        <p>@Model.FirstName</p>
+    </div>
+
+    <div class="form-group">
+        <label>Last Name</label>
+        <p>@Model.LastName</p>
+    </div>
+
+    <div class="form-group">
+        <label>Gender</label>
+        <p>@Model.Gender</p>
+    </div>
+
+    <div class="form-group">
+        <label>Birth date</label>
+        <p>@Model.BirthDate</p>
+    </div>
+
+    <div class="form-group">
+        <label>Phone number</label>
+        <p>@Model.PhoneNumber</p>
+    </div>
+
+    <div class="form-group">
+        <label>Registration date</label>
+        <p>@Model.RegistrationDate</p>
+    </div>
+
+    <div>
+        <input type="submit" value="Delete"/>
+    </div>
+}

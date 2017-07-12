@@ -1,0 +1,34 @@
+﻿@model GymReservationSystem.DomainModel.Holiday
+
+@{
+    ViewBag.Title = "Holiday";
+}
+
+@section scripts
+{
+<script src="~/Scripts/lib/Holiday.js"></script>
+    
+ }
+
+<div style="width:90%; margin:0 auto" class="tablecontainer">
+    <h2>Holidays</h2>
+    <a class="popup btn btn-primary" style="margin-bottom:20px; margin-top:20px;" href="/Holiday/GetHolidaysForm/0">Add new </a>
+
+    <table id="myDataTable">
+        <thead>
+            <tr>
+                <th>
+                    Day 
+                </th>
+                <th>
+                   Title
+                </th>
+                <th>
+                    Edit
+                </th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+

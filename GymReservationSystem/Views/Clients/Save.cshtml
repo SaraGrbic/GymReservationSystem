@@ -1,0 +1,70 @@
+﻿@model GymReservationSystem.Models.ClientRequest
+<h2>Save</h2>
+@using (Html.BeginForm("Save", "Clients", FormMethod.Post, new { id = "popupForm" }))
+{
+    if (Model != null && Model.Id > 0)
+    {
+        @Html.HiddenFor(a => a.Id)
+
+    }
+    <div class="form-group">
+        <label>First Name</label>
+        @Html.TextBoxFor(a => a.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.FirstName)
+
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        @Html.TextBoxFor(a => a.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.LastName)
+
+    </div>
+    <div class="form-group">
+        <label>Gender</label>
+        @Html.DropDownList("Gender",new List<SelectListItem>
+   { new SelectListItem {Text="Male", Value="Male" },
+   new SelectListItem {Text="Female", Value="Female" }
+
+   }, "Select Gender")
+        @Html.ValidationMessageFor(a => a.Gender)
+
+    </div>
+    <div class="form-group">
+        <label>Birth date</label>
+        @Html.TextBoxFor(a => a.BirthDate, new { @class = "form-control ", @type="date" })
+        @Html.ValidationMessageFor(a => a.BirthDate)
+
+    </div>
+    <div class="form-group">
+        <label>Phone number</label>
+        @Html.TextBoxFor(a => a.PhoneNumber, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.PhoneNumber)
+
+    </div>
+    <div class="form-group">
+        <label>Registration date</label>
+        @Html.TextBoxFor(a => a.RegistrationDate, new { @class = "form-control", @type = "date" })
+        @Html.ValidationMessageFor(a => a.RegistrationDate)
+
+    </div>
+    <div>
+        <input type="submit" value="Save" />
+    </div>
+}
+@section Scripts{ 
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+    $("input[type='date']").each(function(index,item){
+    var settings={};
+
+    if ($(item).is("[maxDate]")){
+    settings.maxDate=$(item).attr("maxDate");}
+    $(item).datepicker(settings);
+
+    })
+    });
+</script>
+
+   
+}

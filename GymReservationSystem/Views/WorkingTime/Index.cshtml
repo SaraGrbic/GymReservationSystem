@@ -1,0 +1,34 @@
+﻿@model GymReservationSystem.DomainModel.WorkingTime
+
+@{
+    ViewBag.Title = "Working time";
+}
+
+@section scripts
+{
+<script src="~/Scripts/lib/WorkingTime.js"></script>
+}
+<div style="width:90%; margin:0 auto" class="tablecontainer">
+    
+        <a class="popup btn btn-primary" style="margin-bottom:20px; margin-top:20px;" href="/WorkingTime/Save/0">Add new </a>
+
+    <table id="myDataTable" >
+        <thead>
+            <tr>
+                <th>
+                  Day of the week
+                </th>
+                <th>
+                  Start time
+                </th>
+                <th>
+                   End time
+                </th>
+                <th>Edit</th>
+           
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+

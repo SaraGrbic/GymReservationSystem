@@ -1,0 +1,44 @@
+﻿@model GymReservationSystem.Models.WorkingTimeRequest
+
+<h2>Save</h2>
+@using (Html.BeginForm("Save", "WorkingTime", FormMethod.Post, new { id = "popupForm" }))
+{
+    if (Model != null && Model.Id > 0)
+    {
+        @Html.HiddenFor(a => a.Id)
+
+    }
+    <div class="form-group">
+        <label>Day of week</label>
+        @Html.EnumDropDownListFor(a => a.DayOfWeek, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a=>a.DayOfWeek)
+
+    </div>
+    <div class="form-group">
+        <label>Start time</label>
+        @Html.TextBoxFor(a => a.StartTime, new { @class = "form-control timepicker"})
+        @Html.ValidationMessageFor(a => a.StartTime)
+    </div>
+    <div class="form-group">
+        <label>End time</label>
+        @Html.TextBoxFor(a => a.EndTime, new { @class = "form-control timepicker"})
+        @Html.ValidationMessageFor(a => a.EndTime)
+    </div>
+
+    <div>
+        <input type="submit" value="Save" />
+    </div>
+}
+@section Scripts{
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/Scripts/wickedpicker.js")
+@Styles.Render("~/Content/wickedpicker.css")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.timepicker').wickedpicker();
+            
+        });
+    </script>
+
+}

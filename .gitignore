@@ -1,0 +1,17 @@
+packages
+bin32
+bin64
+*.exe
+bin
+obj
+*.suo
+*.opensdf
+*.sdf
+Out
+Build
+*.user
+*.user
+*.orig
+*.lib
+
+

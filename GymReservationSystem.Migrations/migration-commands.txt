@@ -1,0 +1,6 @@
+﻿Enable-Migrations -ProjectName GymReservationSystem.Migrations -StartUpProjectName GymReservationSystem -ContextProjectName GymReservationSystem.Data
+Add-Migration -ProjectName GymReservationSystem.Migrations -StartUpProjectName GymReservationSystem -Name TODO
+Update-Database -ProjectName GymReservationSystem.Migrations -StartUpProjectName GymReservationSystem
+
+
+Update-Database -ProjectName GymReservationSystem.Migrations -StartUpProjectName GymReservationSystem -TargetMigration:"LeadMargineDates"

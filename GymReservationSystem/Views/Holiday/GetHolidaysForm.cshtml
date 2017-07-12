@@ -1,0 +1,44 @@
+﻿@model GymReservationSystem.Models.HolidayRequest
+
+
+<h2>Save</h2>
+@using (Html.BeginForm("Save", "Holiday", FormMethod.Post, new { id = "popupForm" }))
+{
+    if (Model != null && Model.Id > 0)
+    {
+        @Html.HiddenFor(h => h.Id)
+    }
+    <div class="form-group">
+        <label>Day</label>
+        @Html.TextBoxFor(h => h.Day, new { @class = "form-control" , @type="date"})
+        @Html.ValidationMessageFor(h => h.Day)
+    </div>
+    <div class="form-group">
+        <label>Title</label>
+        @Html.TextBoxFor(h => h.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(h => h.Title)
+
+    </div>
+
+    <div>
+        <input type="submit" value="Save" />
+    </div>
+}
+@section Scripts{
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+    $("input[type='date']").each(function(index,item){
+    var settings={};
+
+    if ($(item).is("[maxDate]")){
+    settings.maxDate=$(item).attr("maxDate");}
+    $(item).datepicker(settings);
+
+    })
+    });
+    </script>
+
+
+}

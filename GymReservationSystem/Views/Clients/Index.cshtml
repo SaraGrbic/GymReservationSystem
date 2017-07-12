@@ -1,0 +1,40 @@
+﻿@model GymReservationSystem.DomainModel.Client
+@{
+    ViewBag.Title = "Index";
+}
+
+@section scripts
+{
+    <script src="~/Scripts/lib/Clients.js"></script>
+}
+<div style="width:90%; margin:0 auto" class="tablecontainer">
+    <a class="popup btn btn-primary" style="margin-bottom:20px; margin-top:20px;" href="/Clients/Save/0">Add new client</a>
+    <table id="myDataTable">
+        <thead>
+            <tr>
+                <th>
+                    First Name
+                </th>
+                <th>
+                    Last Name
+                </th>
+                <th>
+                    Gender
+                </th>
+                <th >
+                    Birth Date
+                </th>
+                <th>
+                    Phone number
+                </th>
+                <th >
+                    Registration date
+                </th>
+                <th>Edit</th>
+
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>

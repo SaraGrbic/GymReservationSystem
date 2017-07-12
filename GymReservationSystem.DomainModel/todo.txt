@@ -1,0 +1,18 @@
+﻿Model
+
+User {name, password, birthday...} 
+Roles => 
+Client, Trainer, Admin
+Group postojace i grupe jer imamo grupne treninge GroupName
+UserGroup UserId, GroupId
+WorkingTime -> StartTime, EndTime, DayOfWeek
+Holliday -> Day, HollidayTitle
+ClosedTime -> StartTime, EndTime, DayOfWeek,
+TrainerTermins -> UserId, Day, StartTime, EndTime (ovo cemo da unosimo za nekoliko meseci unapred)
+GroupTermins -> GroupId, Day, StartTime, EndTime (ovo cemo da unosimo za nekoliko meseci unapred)
+UserTermins -> UserId, Day, StartTime, EndTime (ovo cemo da unosimo za nekoliko meseci unapred)
+UserPayments -> UserId, Year, Month, Price
+Price -> NumberOfMontlyTermins, Amount
+...ima ovde jos dosta da se doda, ali mislim da je i ovo dosta za pocetak
+
+Bitno: ovde idu Code First classe 
